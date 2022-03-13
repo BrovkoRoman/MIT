@@ -2,20 +2,24 @@
 
 using namespace std;
 
-int fib(int n)
+void fib(int n)
 {
-    if(n == 1)
-	return 0;
+    int a = 0;
+    int b = 1;
 
-    if(n == 2)
-	return 1;
+    for(int i = 1; i <= n; i++)
+    {
+	cout << a << "\n";
 
-    return fib(n - 1) + fib(n - 2);
+	int c = a + b;
+	a = b;
+	b = c;
+    }
 }
 
 int main()
 {
     int n;
     cin >> n;
-    cout << fib(n);
+    fib(n);
 }
